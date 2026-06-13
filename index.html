@@ -1,164 +1,187 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rob Streeten</title>
-  <style>
-    :root {
-      --bg: #f4f4f1;
-      --card: #ffffff;
-      --text: #111111;
-      --muted: #666666;
-      --line: #dddddd;
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rob Streeten</title>
+
+<style>
+:root {
+    --bg: #f4f4f4;
+    --card: #ffffff;
+    --text: #111111;
+    --border: #e5e5e5;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.banner {
+    width: 100%;
+    display: block;
+}
+
+.header {
+    text-align: center;
+    padding: 24px 20px 10px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 34px;
+}
+
+.header p {
+    margin: 8px 0 0;
+    color: #666;
+    font-size: 18px;
+}
+
+.tiles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    padding: 20px;
+}
+
+.tile {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    text-decoration: none;
+    color: var(--text);
+    padding: 20px;
+    min-height: 150px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.tile:hover {
+    transform: translateY(-2px);
+}
+
+.icon {
+    font-size: 32px;
+}
+
+.label {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.footer {
+    text-align: center;
+    color: #777;
+    padding: 10px 20px 30px;
+}
+
+.linkedin-logo {
+    width: 36px;
+    height: 36px;
+}
+
+@media (max-width: 500px) {
+
+    .tiles {
+        grid-template-columns: 1fr;
     }
 
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
+    .tile {
+        min-height: 120px;
     }
+}
+</style>
 
-    .wrap {
-      width: 100%;
-      max-width: 520px;
-    }
-
-    header {
-      margin-bottom: 24px;
-      text-align: center;
-    }
-
-    .logo {
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 34px;
-      line-height: 1.1;
-      font-weight: 700;
-    }
-
-    .role {
-      margin-top: 8px;
-      color: var(--muted);
-      font-size: 18px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
-    a.tile {
-      min-height: 145px;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 18px;
-      text-decoration: none;
-      color: var(--text);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-      transition: transform 120ms ease, box-shadow 120ms ease;
-    }
-
-    a.tile:active {
-      transform: scale(0.98);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
-
-    .icon {
-      font-size: 28px;
-      line-height: 1;
-    }
-
-    .label {
-      font-size: 20px;
-      font-weight: 650;
-      line-height: 1.15;
-    }
-
-    .hint {
-      margin-top: 6px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.3;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 20px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    @media (max-width: 420px) {
-      body { padding: 18px; align-items: flex-start; }
-      .grid { grid-template-columns: 1fr; }
-      a.tile { min-height: 120px; }
-      h1 { font-size: 30px; }
-    }
-  </style>
 </head>
+
 <body>
-  <main class="wrap">
-    <header>
-      <div class="logo">coolabi</div>
-      <h1>Rob Streeten</h1>
-      <div class="role">Group Finance Director</div>
-    </header>
 
-    <section class="grid" aria-label="Contact options">
-      <a class="tile" href="https://www.linkedin.com/in/YOUR-LINKEDIN-SLUG" target="_blank" rel="noopener">
-        <span class="icon">in</span>
-        <span>
-          <span class="label">Connect on LinkedIn</span>
-          <span class="hint">Open Rob’s LinkedIn profile</span>
-        </span>
-      </a>
+<div class="container">
 
-      <a class="tile" href="rob-streeten.vcf">
-        <span class="icon">👤</span>
-        <span>
-          <span class="label">Add Rob to contacts</span>
-          <span class="hint">Download contact card</span>
-        </span>
-      </a>
+    <img src="coolabi.jpeg" alt="Coolabi" class="banner">
 
-      <a class="tile" href="https://calendly.com/YOUR-CALENDAR-LINK" target="_blank" rel="noopener">
-        <span class="icon">📅</span>
-        <span>
-          <span class="label">Plan a meeting</span>
-          <span class="hint">Choose a convenient time</span>
-        </span>
-      </a>
+    <div class="header">
+        <h1>Rob Streeten</h1>
+        <p>Group Finance Director</p>
+    </div>
 
-      <a class="tile" href="https://www.coolabi.com" target="_blank" rel="noopener">
-        <span class="icon">↗</span>
-        <span>
-          <span class="label">Visit Coolabi</span>
-          <span class="hint">Go to the company website</span>
-        </span>
-      </a>
-    </section>
+    <div class="tiles">
 
-    <footer>Tap a tile to continue</footer>
-  </main>
+        <a class="tile"
+           href="https://www.linkedin.com/in/rob-streeten/"
+           target="_blank">
+
+            <img
+                class="linkedin-logo"
+                src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
+                alt="LinkedIn">
+
+            <div class="label">
+                Connect on LinkedIn
+            </div>
+
+        </a>
+
+        <a class="tile"
+           href="rob-streeten.vcf">
+
+            <div class="icon">👤</div>
+
+            <div class="label">
+                Add Rob to Contacts
+            </div>
+
+        </a>
+
+        <a class="tile"
+           href="https://calendly.com/">
+
+            <div class="icon">📅</div>
+
+            <div class="label">
+                Plan a Meeting
+            </div>
+
+        </a>
+
+        <a class="tile"
+           href="https://www.coolabi.com"
+           target="_blank">
+
+            <div class="icon">🚀</div>
+
+            <div class="label">
+                Visit Coolabi
+            </div>
+
+        </a>
+
+    </div>
+
+    <div class="footer">
+        Tap a tile to continue
+    </div>
+
+</div>
+
 </body>
 </html>
