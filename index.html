@@ -84,7 +84,8 @@ body {
 }
 
 .icon {
-    font-size: 34px;
+    font-size: 48px;
+    line-height: 1;
 }
 
 .label {
@@ -94,8 +95,16 @@ body {
 }
 
 .linkedin-logo {
-    width: 38px;
-    height: 38px;
+    width: 52px;
+    height: 52px;
+}
+
+.tile-image {
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .footer {
@@ -140,7 +149,7 @@ body {
         <a class="tile"
            href="rob-streeten.vcf">
 
-            <div class="icon">👤</div>
+            <div class="icon">👤➕</div>
 
             <div class="label">
                 Add Rob to Contacts
@@ -163,7 +172,10 @@ body {
            href="https://www.coolabi.com"
            target="_blank">
 
-            <div class="icon">🚀</div>
+            <img
+                class="tile-image"
+                src="coolabi.jpeg"
+                alt="Coolabi">
 
             <div class="label">
                 Visit Coolabi
